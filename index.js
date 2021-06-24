@@ -19,7 +19,6 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 client.connect(err => {
     const blogsCollection = client.db("RetroTechBlog").collection("Blogs");
-
     const adminsCollection = client.db("RetroTechBlog").collection("Admins");
 
     console.log('database Connected');
@@ -40,8 +39,6 @@ client.connect(err => {
                 res.send(documents)
             })
     })
-
-
 
 
     app.post('/addAdmin', (req, res) => {
